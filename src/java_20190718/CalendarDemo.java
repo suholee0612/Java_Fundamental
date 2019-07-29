@@ -29,7 +29,7 @@ public class CalendarDemo {
 		int[] monthArray = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 		
 		//boolean isLeafYear = year%4==0 && (year%100 != 0 || year%400 == 0);
-		if(year%4==0 && year%100!=0 || year%400==0){ 
+		if(isLeafYear(year)){ 
 		monthArray[1] = 29;
 			}
 		
@@ -60,5 +60,9 @@ public class CalendarDemo {
 		}
 		System.out.println(year + "년 " + month + "월 " 
 		+ day + "일 " + message);
+	}
+
+	private static boolean isLeafYear(int year) {
+		return year%4==0 && year%100!=0 || year%400==0;
 	}
 }
