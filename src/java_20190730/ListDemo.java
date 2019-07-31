@@ -35,19 +35,28 @@ public class ListDemo {
 		list.add(p4);// 할당
 		// list.remove(0) 삭제
 		// 모두 삭제
-		for (int i = 0; i < list.size(); i++) {
-			list.remove(i--);
-		}
+		//for (int i = 0; i < list.size(); i++) {
+		//	list.remove(i--);
+		//}
 		// 출력
 		for (int i = 0; i < list.size(); i++) {
-			Product temp = (Product) list.get(i);
+			Product temp = list.get(i);
 			System.out.println(temp);
 
 		}
-		//enhanced for loop도 출력이 가능하다.(제네릭으로 선언한 경우만 가능)
+		// enhanced for loop도 출력이 가능하다.(제네릭으로 선언한 경우만 가능)
+		// for (Product product : list) {
+		// System.out.println(product);
+		// }
+		// System.out.println("Hello Java");
 		for (Product product : list) {
-			System.out.println(product);
+			if (product.number == 3) {
+				product.price = 3500;
+			}
 		}
-		System.out.println("Hello Java");
+		for (int i = 0; i < list.size(); i++) {
+			Product temp = list.get(i);
+			System.out.println(temp);
+		}
 	}
 }
